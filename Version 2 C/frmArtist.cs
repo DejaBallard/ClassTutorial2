@@ -67,6 +67,7 @@ namespace Version_2_C
                 _WorksList.RemoveAt(lcIndex);
                 updateDisplay();
             }
+            frmMain.Instance.updateDisplay();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -77,6 +78,7 @@ namespace Version_2_C
                 _WorksList.AddWork(lcReply[0]);
                 updateDisplay();
             }
+            frmMain.Instance.updateDisplay();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -97,6 +99,7 @@ namespace Version_2_C
                 {
                     MessageBox.Show(ex.Message);
                 }
+            frmMain.Instance.updateDisplay();
         }
 
         private Boolean isValid()
@@ -124,6 +127,7 @@ namespace Version_2_C
             {
                 MessageBox.Show(ex.Message);
             }
+            frmMain.Instance.updateDisplay();
         }
 
         private void rbByDate_CheckedChanged(object sender, EventArgs e)

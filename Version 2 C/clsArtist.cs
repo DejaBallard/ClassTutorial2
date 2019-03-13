@@ -49,7 +49,7 @@ namespace Version_2_C
 
         public decimal TotalValue
         {
-            get { return _TotalValue; }
+            get { return _WorksList.GetTotalValue(); }
         }
 
         public clsWorksList WorksList
