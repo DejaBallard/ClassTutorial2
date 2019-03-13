@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Version_2_C
 {
+    [Serializable]
     sealed class clsDateComparer : IComparer<clsWork>
     {
         private clsDateComparer() { }
@@ -12,7 +13,7 @@ namespace Version_2_C
             return x.Date.CompareTo(y.Date);
         }
     }
-
+    [Serializable]
     sealed class clsDDateComparer : IComparer<clsWork>
     {
         private clsDDateComparer() { }

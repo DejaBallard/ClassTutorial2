@@ -22,6 +22,11 @@ namespace Version_2_C
             lcWork.Weight = float.Parse(txtWeight.Text);
             lcWork.Material = txtMaterial.Text;
         }
+
+        public static void Run(clsSculpture prSculpture)
+        {
+            Instance.SetDetails(prSculpture);
+        }
     }
 }
 

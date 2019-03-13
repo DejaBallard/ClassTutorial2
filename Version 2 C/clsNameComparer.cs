@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Version_2_C
 {
+    [Serializable]
     sealed class clsNameComparer : IComparer<clsWork>
     {
         private clsNameComparer() { }

@@ -25,6 +25,10 @@ namespace Version_2_C
             lcWork.Height = float.Parse(txtHeight.Text);
             lcWork.Type = txtType.Text;
         }
+        public static void Run(clsPhotograph prPhotograph)
+        {
+            Instance.SetDetails(prPhotograph);
+        }
     }
 }
 
