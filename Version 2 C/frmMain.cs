@@ -3,14 +3,17 @@ using System.Windows.Forms;
 
 namespace Version_2_C
 {
-    public partial class frmMain : Form
+    sealed public partial class frmMain : Form
     {
-        public frmMain()
+        private frmMain()
         {
             InitializeComponent();
         }
+        private static readonly frmMain _Instance = new frmMain();
 
         private clsArtistList _ArtistList = new clsArtistList();
+
+        public static frmMain Instance => _Instance;
 
         private void updateDisplay()
         {

@@ -9,12 +9,10 @@ namespace Version_2_C
         private string _Material;
 
         [NonSerialized()]
-        private static frmSculpture _SculptureDialog;
+        private frmSculpture _SculptureDialog = frmSculpture.Instance;
 
         public override void EditDetails()
         {
-            if (_SculptureDialog == null)
-                _SculptureDialog = new frmSculpture();
             _SculptureDialog.SetDetails(this);
         }
 

@@ -10,12 +10,10 @@ namespace Version_2_C
         private string _Type;
 
         [NonSerialized()]
-        private frmPhotograph _PhotoDialog;
+        private frmPhotograph _PhotoDialog = frmPhotograph.Instance;
 
         public override void EditDetails()
         {
-            if (_PhotoDialog == null)
-                _PhotoDialog = new frmPhotograph();
             _PhotoDialog.SetDetails(this);
         }
 

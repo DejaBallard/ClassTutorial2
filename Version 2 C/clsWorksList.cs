@@ -6,8 +6,9 @@ namespace Version_2_C
     [Serializable()]
     public class clsWorksList : List<clsWork>
     {
-        private static clsNameComparer _NameComparer = new clsNameComparer();
-        private static clsDateComparer _DateComparer = new clsDateComparer();
+        clsNameComparer NameInstance = clsNameComparer.Instance;
+        clsDateComparer DateInstance = clsDateComparer.Instance;
+       
         private byte _SortOrder;
 
         public void AddWork(char prChoice)
@@ -42,16 +43,16 @@ namespace Version_2_C
 
         public void SortByName()
         {
-            Sort(_NameComparer);
+            Sort(NameInstance.Compare);
             _SortOrder = 0;
         }
 
         public void SortByDate()
-        {
-            Sort(_DateComparer);
+        {     
+            Sort(DateInstance.Compare);
             _SortOrder = 1;
         }
-
+  
         public byte SortOrder
         {
             get { return _SortOrder; }

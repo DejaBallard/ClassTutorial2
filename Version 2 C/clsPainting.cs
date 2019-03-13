@@ -5,19 +5,19 @@ namespace Version_2_C
     [Serializable()]
     public class clsPainting : clsWork
     {
+        public delegate void LoadPaintingFormDelegate(clsPainting prPainting);
+        public static LoadPaintingFormDelegate LoadPaintingForm;
         private float _Width;
         private float _Height;
         private string _Type;
 
 
-        [NonSerialized()]
-        private static frmPainting _PaintDialog;
+       [NonSerialized()]
+        private frmPainting _PaintDialog = frmPainting.Instance;
 
         public override void EditDetails()
         {
-            if (_PaintDialog == null)
-                _PaintDialog = new frmPainting();
-            _PaintDialog.SetDetails(this);
+            LoadPaintingForm(this);
         }
 
         public Single Width

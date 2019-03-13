@@ -1,12 +1,12 @@
 namespace Version_2_C
 {
-    public partial class frmSculpture : Version_2_C.frmWork
+    sealed public partial class frmSculpture : Version_2_C.frmWork
     {
-        public frmSculpture()
+        private frmSculpture()
         {
             InitializeComponent();
         }
-
+        public static readonly frmSculpture Instance = new frmSculpture();
         protected override void updateForm()
         {
             base.updateForm();

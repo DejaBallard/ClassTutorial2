@@ -1,12 +1,12 @@
 namespace Version_2_C
 {
-    public partial class frmPainting : Version_2_C.frmWork
+    sealed public partial class frmPainting : Version_2_C.frmWork
     {
-
-        public frmPainting()
+        private frmPainting()
         {
             InitializeComponent();
         }
+        public static readonly frmPainting Instance = new frmPainting();
 
         protected override void updateForm()
         {
@@ -26,6 +26,10 @@ namespace Version_2_C
             lcWork.Type = txtType.Text;
         }
 
+        public static void Run(clsPainting prPainting)
+        {
+            Instance.SetDetails(prPainting);
+        }
     }
 }
 
