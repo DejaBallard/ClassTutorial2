@@ -10,12 +10,11 @@ namespace Version_2_C
             InitializeComponent();
         }
         private static readonly frmMain _Instance = new frmMain();
-
         private clsArtistList _ArtistList = new clsArtistList();
 
         public static frmMain Instance => _Instance;
 
-        private void updateDisplay()
+        public void updateDisplay()
         {
             lstArtists.DataSource = null;
             string[] lcDisplayList = new string[_ArtistList.Count];
@@ -28,9 +27,10 @@ namespace Version_2_C
         {
             try
             {
-                _ArtistList.NewArtist();
-                MessageBox.Show("Artist added!", "Success");
-                updateDisplay();
+                frmArtist.Run(new clsArtist(_ArtistList));
+                //_ArtistList.NewArtist();
+                //MessageBox.Show("Artist added!", "Success");
+                //updateDisplay();
             }
             catch (Exception ex)
             {
@@ -46,8 +46,9 @@ namespace Version_2_C
             if (lcKey != null)
                 try
                 {
-                    _ArtistList.EditArtist(lcKey);
-                    updateDisplay();
+                    frmArtist.Run(_ArtistList[lcKey]);
+                    //_ArtistList.EditArtist(lcKey);
+                    //updateDisplay();
                 }
                 catch (Exception ex)
                 {

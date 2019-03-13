@@ -15,7 +15,6 @@ namespace Version_2_C
         private clsWorksList _WorksList;
         private clsArtistList _ArtistList;
 
-        private static frmArtist _ArtistDialog = new frmArtist();
 
         public clsArtist() { }
 
@@ -23,13 +22,6 @@ namespace Version_2_C
         {
             _WorksList = new clsWorksList();
             _ArtistList = prArtistList;
-            EditDetails();
-        }
-
-        public void EditDetails()
-        {
-            _ArtistDialog.SetDetails(this);
-            _TotalValue = _WorksList.GetTotalValue();
         }
 
         public bool IsDuplicate(string prArtistName)
@@ -63,6 +55,14 @@ namespace Version_2_C
         public clsWorksList WorksList
         {
             get { return _WorksList; }
+        }
+
+        public void NewArtist()
+        {
+            if (!string.IsNullOrEmpty(Name))
+                _ArtistList.Add(Name, this);
+            else
+                throw new Exception("No Artist name entered");
         }
     }
 }
