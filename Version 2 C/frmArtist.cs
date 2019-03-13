@@ -41,6 +41,8 @@ namespace Version_2_C
             updateForm();
             updateDisplay();
             Show();
+            frmMain.Instance.GalleryNameChanged += new frmMain.Notify(updateTitle);
+            updateTitle(_Artist.ArtistList.GalleryName);
         }
 
         private void updateForm()
@@ -149,6 +151,13 @@ namespace Version_2_C
             {
                 lcArtistForm.Show();
                 lcArtistForm.Activate();
+            }
+        }
+        private void updateTitle(string prGalleryName)
+        {
+            if (!string.IsNullOrEmpty(prGalleryName))
+            {
+                Text = "Artist Details - " + prGalleryName;
             }
         }
     }
