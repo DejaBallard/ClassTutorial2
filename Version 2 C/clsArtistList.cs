@@ -8,23 +8,9 @@ namespace Version_2_C
     public class clsArtistList : SortedDictionary<string, clsArtist>
     {
         private const string _FileName = "gallery.dat";
+        private string _GalleryName;
 
-        //public void EditArtist(string prKey)
-        //{
-        //    clsArtist lcArtist;
-        //    lcArtist = this[prKey];
-        //    if (lcArtist != null)
-        //        lcArtist.EditDetails();
-        //    else
-        //        throw new Exception("Sorry no artist by this name");
-        //}
-
-        //public void NewArtist()
-        //{
-        //    clsArtist lcArtist = new clsArtist(this);
-        //    if (lcArtist.Name != "")
-        //        Add(lcArtist.Name, lcArtist);
-        //}
+        public string GalleryName { get => _GalleryName; set => _GalleryName = value; }
 
         public decimal GetTotalValue()
         {
